@@ -19,7 +19,7 @@ const firebaseConfig = {
       .signInWithPopup(provide)
       .then((result) => {
        
-        window.location = "https://discord-ripoff.spooketti.repl.co"
+        window.location = "./index.html"
         //console.log(firebase.auth().currentUser)
       })
       .catch((error) =>

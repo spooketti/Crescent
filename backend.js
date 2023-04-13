@@ -30,7 +30,7 @@ profileImage.src = pfp
     profileName.innerText = username
     var uid = user.uid;
   } else {
-   window.location = "https://discord-ripoff.spooketti.repl.co/welcome.html"
+   window.location = "./welcome.html"
   }
 });
 
