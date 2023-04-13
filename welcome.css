@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Open+Sans:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+html
+{
+  width: 100%;
+  height: 100%;
+}
+
+body
+{
+  overflow:hidden;
+  width: 100%;
+  height: 100%;
+    background: linear-gradient(4deg, #7110a1, #d6c813);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:14% 0%}
+    50%{background-position:87% 100%}
+    100%{background-position:14% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:14% 0%}
+    50%{background-position:87% 100%}
+    100%{background-position:14% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:14% 0%}
+    50%{background-position:87% 100%}
+    100%{background-position:14% 0%}
+}
+
+#PCcontent
+{
+   width:50%;
+  height:80%;
+  background-color:#4d70a6;
+  border-radius: 2%;
+  left:25%;
+  top:10%;
+  position:absolute;
+   background: linear-gradient(197deg, #9b0ee1, #41065e);
+    background-size: 400% 400%;
+
+    -webkit-animation: login 55s ease infinite;
+    -moz-animation: login 55s ease infinite;
+    animation: login 55s ease infinite;
+}
+
+#signin
+{
+  position:absolute;
+  z-index:2;
+}
+
+#logo
+{
+
+  position:absolute;
+  padding-left: 40%;
+  width:150px;
+  height:150px;
+  
+  z-index:3
+}
+
+#logo:hover
+{
+  filter: brightness(50%);
+  transition: all .3s ease;
+}
+
+#signout:not(hover)
+{
+  filter: brightness(100%);
+  transition: all .3s ease;
+}
+
+#aligntext
+{
+  position:absolute;
+  padding-left:25%;
+  bottom:0%;
+   font-size: 20px;
+  font-family: 'Nunito Sans', sans-serif;
+  color:#dfdda4;
+   text-align: center;
+}
+
+#toplogo
+{
+  font-size: 50px;
+  font-family: 'Nunito Sans', sans-serif;
+  color:#dfdda4;
+   text-align: center;
+}
+
+@-webkit-keyframes login {
+    0%{background-position:57% 0%}
+    50%{background-position:44% 100%}
+    100%{background-position:57% 0%}
+}
+@-moz-keyframes login {
+    0%{background-position:57% 0%}
+    50%{background-position:44% 100%}
+    100%{background-position:57% 0%}
+}
+@keyframes login {
+    0%{background-position:57% 0%}
+    50%{background-position:44% 100%}
+    100%{background-position:57% 0%}
+}
+
+
+

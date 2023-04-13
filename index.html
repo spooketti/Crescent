@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Crescent</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta name="description" content="a chat app by spooketti and felipehellomods">
+   <link rel="icon" type="image/png" href="crescent logo.png">
+</head>
+
+<body>
+  <button id="signout" onclick="signOut()">Sign Out</button>
+  <button id="sendMessage" onclick="sendMessage()">Send</button>
+  <div id="ProfileChange">
+    <div id="PCcontent">
+      <input type="search" id="editName">Change Username</input>
+    <input type="search" id="editPFP">Change PFP (url)</input>
+    <button onclick="updateUser()">Accept</button>
+    <button onclick="closePChange()">Cancel</button>
+    </div>
+  </div>
+  <div id="NavBar">
+    <p id="navname">月Crescent</p>
+    <div id="profile" onclick="profileChangeUI()">
+     <img id="profile img"></img>
+      <p id="profilename">Software Error: Please report to dev team</p>
+      
+    </div>
+  </div>
+  <div id="SideBar">
+    <div id="ContactsTxt">
+      <p>Contacts</p>
+
+    </div>
+
+  </div>
+  <div id="NameBanner">
+    @FelipeHelloMods
+
+  </div>
+  <div id="Chat">
+
+  </div>
+  <div id="MessagePrompt" contenteditable="true">
+    Message @UserName
+
+  </div>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="backend.js"></script>
+</body>
+
+</html>

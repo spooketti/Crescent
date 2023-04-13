@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Open+Sans:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+html,body {
+  height: 100%;
+  width: 100%;
+  background-color: #161f2d;
+}
+
+#signout {
+  position:fixed;
+  margin: auto auto;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 12pt;
+  font-weight: 300;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #3a444e;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+#signout:hover
+{
+  filter: brightness(50%);
+  transition: all .3s ease;
+}
+
+#signout:not(hover)
+{
+  filter: brightness(100%);
+  transition: all .3s ease;
+}
+/*if (!/\S/.test(message)) most regular expression (you see it everyday) HELP HELP ME HE'S HOLDING ME HOSTAGE
+
+REPLIT
+REPLIT HELP ME
+REPLIT PLEASE I AM INCLFAIORNIOFA PLEASE HELP ME*/ 
+
+#NavBar
+{
+  top: 0;
+  left: 0;
+  width:100%;
+  height:61px;
+ /* background-color:#507df8;*/
+  background-color:#3f094e;
+  position:fixed; 
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  z-index:2;
+   background: linear-gradient(173deg, #3f094e,#9121c8);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 59s ease infinite;
+    -moz-animation: AnimationName 59s ease infinite;
+    animation: AnimationName 59s ease infinite;
+}
+
+#navname
+{
+  /*font-family: 'Climate Crisis', cursive;*/
+  font-family: 'Raleway', sans-serif;
+  font-size: 20pt;
+  margin-top: 14px;
+  margin-left:20px;
+  /*color:white;*/
+  color:#dfdda4;
+  position: fixed;
+  
+}
+/*
+felipe是一个臭皮蛋
+*/
+
+#SideBar
+{
+  left:0;
+  height:100%;
+  width:15%;
+  background-color:#373737;
+  color:white;
+  position:fixed;
+  top:8%;
+  text-align: center;
+  box-shadow: 0.5px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#SideBar p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 12pt;
+}
+
+#ContactsTxt {
+  background-color:#747474;
+  min-height: 20px;
+  height: 5%;
+  width: 50%;
+  position:fixed;
+  z-index: 2;
+}
+
+#NameBanner
+{
+  position:fixed;
+  top:8%;
+  left:15%;
+  color:#000000;
+  height:10%;
+  width:85%;
+  background-color:#323d4e;
+}
+
+#Chat
+{
+  position:fixed;
+  top:18%;
+  left:15%;
+  color:#ede8e8;
+  height:72%;
+  width:85%;
+  background-color:#161f2d;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+
+#MessagePrompt
+{
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 12pt;
+  position:fixed;
+  bottom:0%;
+  left:15%;
+  color:white;
+  height:10%;
+  width:85%;
+  background-color:#323d4e;
+  border-radius: 8px;
+}
+
+#Chat div
+{
+  padding-left:1%;
+  
+}
+
+#Chat div:hover
+{
+  background-color:#090c11 ;
+  transition: all .1s ease;
+}
+
+#Chat div:not(hover)
+{
+  transition: all .1s ease;
+}
+#Chat div img
+{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#Chat div p
+{
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 100;
+  font-size: 12pt;
+  
+}
+
+#signout
+{
+  z-index: 5;
+  right:10%;
+}
+
+#Chat div div
+{
+  display:inline-block;
+}
+
+#Chat div div p
+{
+  display: block;
+   margin-bottom: 0em;
+  
+}
+
+#Chat div div span
+{
+ display: block;
+margin-bottom: 0em;
+   font-family: 'Nunito Sans', sans-serif;
+}
+
+#sendMessage
+{
+  right:10%;
+  bottom:10%;
+  position: absolute;
+  z-index: 6;
+}
+
+#profile
+{
+   display:flex;
+  height:100%;
+  right:20%;
+  position: absolute;
+  width:10%;
+
+}
+
+#profile img
+{
+  padding-top:5%;
+  height:40px;
+  width:40px;
+  border-radius: 50%;
+}
+
+#profilename
+{
+  display: inline-block;
+  position:absolute;
+  
+  padding-left:40px;
+  font-size: 100%;
+  font-family: 'Nunito Sans', sans-serif;
+  color:#dfdda4;
+}
+
+#profile:hover
+{
+ /* background-color:#10286a; */
+  background-color:#2a0434;
+  transition: all .1s ease;
+}
+
+#profile:not(hover)
+{
+ 
+  transition: all .1s ease;
+}
+
+#ProfileChange
+{
+   position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 10; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#editName
+{
+  top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#editPFP
+{
+  top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #161f2d;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #141b25; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #323d4e; 
+}
+
+#PCcontent
+{
+  width:30%;
+  height:80%;
+  background-color:#4d70a6;
+  border-radius: 8px;
+  left:35%;
+  top:10%;
+  position:absolute;
+}
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:41% 0%}
+    50%{background-position:60% 100%}
+    100%{background-position:41% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:41% 0%}
+    50%{background-position:60% 100%}
+    100%{background-position:41% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:41% 0%}
+    50%{background-position:60% 100%}
+    100%{background-position:41% 0%}
+}
