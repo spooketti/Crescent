@@ -71,15 +71,15 @@ function closePChange()
 
 
 document.addEventListener("click", function(e) {
-  console.log(e.target)
-  if (e.target.id == chatbox.id) {
-    chatbox.innerText = ""
-    return; //temporarily return since i'm not sure what
+  //console.log(e.target)
+//  if (e.target.id == chatbox.id) {
+   // chatbox.innerText = ""
+    //return; //temporarily return since i'm not sure what
     //reproducssions come from this
-  }
-  if (chatbox.innerText == "") {
-    chatbox.innerText = "Message @Idk"
-  }
+ // }
+  //if (chatbox.innerText == "") {
+    //chatbox.innerText = "Message @Idk"
+  //}
 
   if(e.target.id == "ProfileChange")
   {
@@ -195,4 +195,20 @@ fetchChat.on("child_added", function(snapshot) {
   chat.scrollTop = chat.scrollHeight;
 });
 
+function focusPrompt(focus)
+{
+ // console.log( (!/\S/.test(chatbox.innerText)) )
+  let y = document.getElementById("stupid")
+   if(focus){ 
+      document.getElementById("stupid").style.display = "none"
+    return
+     }
+ if(!focus && (!/\S/.test(chatbox.innerText)))
+ {
+   y.style.display = "block"
+   return
+ }
+ 
+  
+}
 
