@@ -333,7 +333,7 @@ margin-bottom: 0em;
   pointer-events: none;
   font-family: 'Nunito Sans', sans-serif;
   font-size: 12pt;
-  position:absolute;
+  position:fixed;
   bottom:0%;
   left:15%;
   color:grey;
