@@ -16,12 +16,33 @@
 <body>
   <button id="signout" onclick="signOut()">Sign Out</button>
   <button id="sendMessage" onclick="sendMessage()">Send</button>
+  <div id="dynamicPopup">
+    <div id="firstLogin">
+      <h3 class="popupTitle"style="text-align: center;">月Crescent</h3>
+      <p>It's the first time you've logged in on this device<br>这是你第一次登录</p>
+      <strong>Your Current Profile:</strong>
+      <div class="currentProf" style=" display:flex;">
+      <img class="currentProfIMG" style="border-radius:0%;padding-left: 3%;padding-bottom:3%;"></img>
+        <span class="currentProfSPAN" style="padding-left:4%;padding-top:3%;"></span>
+      </div>
+      <p style="text-align: center;">Would you like to <b style="color:red;">change</b> your profile?<br>你想<b style="color:red;">自定义</b>您的个人资料吗?</p><p style="text-align: center;">You can change your profile at anytime by pressing your profile in the top right corner<br>您可以随时通过按右上角的个人资料来更改您的个人资料</p>
+      <button style="position:initial; font-family: 'Nunito Sans', sans-serif;color:white;background-color: darkgreen;border-radius:8px;cursor: pointer;"onclick="closePChange('dynamicPopup');profileChangeUI()">Yes</button>
+      <button style="position:initial; font-family: 'Nunito Sans', sans-serif;color:white;background-color: darkred;border-radius: 8px;cursor: pointer;" onclick="closePChange('dynamicPopup')">No</button>
+    </div>
+  </div>
+  
   <div id="ProfileChange">
     <div id="PCcontent">
-      <input type="search" id="editName">Change Username</input>
-    <input type="search" id="editPFP">Change PFP (url)</input>
-    <button onclick="updateUser()">Accept</button>
-    <button onclick="closePChange()">Cancel</button>
+       <h3 class="popupTitle"style="text-align: center;">月Crescent</h3>
+       <div class="currentProf" style=" display:flex;">
+      <img class="currentProfIMG" style="border-radius:0%;padding-left: 3%;padding-bottom:3%;"></img>
+        <span class="currentProfSPAN" style="padding-left:4%;padding-top:3%;"></span>
+      </div>
+      <input type="search" id="editName" style=" font-family: 'Raleway', sans-serif;border-radius:2px;background-color:#9121c8;color:gold;">Change Username 更改用户名</input>
+    <input type="search" id="editPFP" style=" font-family: 'Raleway', sans-serif;border-radius:2px;background-color:#9121c8;color:gold;">Change PFP (url) 更改个人资料图片</input>
+      
+    <button style="position:absolute; font-family: 'Nunito Sans', sans-serif;color:white;background-color: darkgreen;border-radius: 8px;cursor: pointer;bottom:10%;left:25%;"onclick="updateUser();">Update</button>
+    <button style="position:absolute; font-family: 'Nunito Sans', sans-serif;color:white;background-color: darkred;border-radius: 8px;cursor: pointer;bottom:10%;right:25%;"onclick="closePChange('ProfileChange')">Close</button>
     </div>
   </div>
   <div id="NavBar">
@@ -40,13 +61,13 @@
 
   </div>
   <div id="NameBanner">
-    @FelipeHelloMods
+    <p># general</p>
 
   </div>
   <div id="Chat">
 
   </div>
-  <div id="MessagePrompt" contenteditable="true" onclick="focusPrompt(true)" onblur="focusPrompt(false)">
+  <div id="MessagePrompt" contenteditable="true" onfocus="focusPrompt(true)" onblur="focusPrompt(false)">
     
   
   </div>

@@ -1,4 +1,7 @@
 let isNewline = false
+ let notifSound = new Audio("notif.wav")
+let hasInteractedWithDOM = false
+let isWebsiteFocus = false
 let chat = document.getElementById("Chat")
 let chatbox = document.getElementById("MessagePrompt")
 let username
@@ -29,12 +32,33 @@ firebase.auth().onAuthStateChanged((user) => {
 profileImage.src = pfp
     profileName.innerText = username
     var uid = user.uid;
+    let profIMG = document.querySelectorAll(".currentProfIMG")
+  let profSPAN = document.querySelectorAll(".currentProfSPAN")
+  for(let i=0;i<profIMG.length;i++)
+    {
+      profIMG[i].src = user.photoURL
+    }
+  for(let i=0;i<profSPAN.length;i++)
+    {
+      profSPAN[i].innerText = user.displayName
+    }
+    if(!localStorage.hasConfirmedUsername)
+{
+  localStorage.hasConfirmedUsername = true
+  document.getElementById("dynamicPopup").style.display = "block";
+  
+ // document.querySelectorAll(".currentProfIMG").src = user.photoURL
+ // document.querySelector(".currentProfSPAN").innerText = user.displayName
+  //localStorage.hasConfirmedUsername = "true"
+}
   } else {
    window.location = "./welcome.html"
   }
 });
 
+
 const user = firebase.auth().currentUser;
+
 
 function updateUser()
 {
@@ -42,6 +66,7 @@ function updateUser()
   let newpfp = document.getElementById("editPFP").value
   console.log(newname)
   console.log(newpfp)
+  //console.log(activeUser)
 activeUser.updateProfile({
   displayName: newname,
   photoURL: newpfp
@@ -52,6 +77,16 @@ activeUser.updateProfile({
   pfp = activeUser.photoURL
   profileImage.src = activeUser.photoURL
   profileName.innerText = activeUser.displayName
+   let profIMG = document.querySelectorAll(".currentProfIMG")
+  let profSPAN = document.querySelectorAll(".currentProfSPAN")
+  for(let i=0;i<profIMG.length;i++)
+    {
+      profIMG[i].src = activeUser.photoURL
+    }
+  for(let i=0;i<profSPAN.length;i++)
+    {
+      profSPAN[i].innerText = activeUser.displayName
+    }
   closePChange()
 }).catch((error) => {
   // An error occurred
@@ -64,13 +99,15 @@ function profileChangeUI()
 profileChange.style.display = "block";  
 }
 
-function closePChange()
+function closePChange(x)
 {
-  profileChange.style.display = "none";  
+  document.getElementById(x).style.display = "none";  
 }
 
 
 document.addEventListener("click", function(e) {
+  hasInteractedWithDOM = true // sadly i need to verify this in order for audio to work
+  
   //console.log(e.target)
 //  if (e.target.id == chatbox.id) {
    // chatbox.innerText = ""
@@ -83,7 +120,7 @@ document.addEventListener("click", function(e) {
 
   if(e.target.id == "ProfileChange")
   {
-    closePChange()
+    closePChange(e.target.id)
   }
 })
 
@@ -193,6 +230,9 @@ fetchChat.on("child_added", function(snapshot) {
   messageContent.appendChild(message)
   
   chat.scrollTop = chat.scrollHeight;
+
+  if(!isWebsiteFocus && hasInteractedWithDOM)
+  notifSound.play()
 });
 
 function focusPrompt(focus)
@@ -208,7 +248,19 @@ function focusPrompt(focus)
    y.style.display = "block"
    return
  }
- //
+ 
   
 }
+
+document.addEventListener( 'visibilitychange' , function() {
+    if (document.hidden) {
+        isWebsiteFocus = false
+      return;
+    } 
+        console.log('well back');
+    isWebsiteFocus = true
+}, false );
+
+
+
 
