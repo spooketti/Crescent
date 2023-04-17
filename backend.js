@@ -1,7 +1,7 @@
 let isNewline = false
  let notifSound = new Audio("notif.wav")
 let hasInteractedWithDOM = false
-let isWebsiteFocus = false
+let isWebsiteFocus = true
 let chat = document.getElementById("Chat")
 let chatbox = document.getElementById("MessagePrompt")
 let username
@@ -165,7 +165,7 @@ function sendMessage() {
 
   // get values to be submitted
   const timestamp = Date.now();
-  let today = new Date();
+ /* let today = new Date();
 const dd = String(today.getDate()).padStart(2, '0');
 const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 const yyyy = today.getFullYear();
@@ -173,7 +173,7 @@ const yyyy = today.getFullYear();
  let time =  today.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
   
 
-today = mm + '/' + dd + '/' + yyyy + " at " + time;
+today = mm + '/' + dd + '/' + yyyy + " at " + time;*/
   //console.log(today)
   const message = chatbox.innerText
   //if(message.replace(" ","") == "")
@@ -201,38 +201,65 @@ today = mm + '/' + dd + '/' + yyyy + " at " + time;
     username,
     message,
     pfp,
-    today,
+    timestamp,
   });
 }
 const fetchChat = db.ref("messages/");
 
 fetchChat.on("child_added", function(snapshot) {
   const messages = snapshot.val();
+
+   let today = new Date(messages.timestamp);
+const dd = String(today.getDate()).padStart(2, '0');
+const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+const yyyy = today.getFullYear();
+  
+ let time =  today.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+  today = mm + '/' + dd + '/' + yyyy + " at " + time;
   
   let messageDiv = document.createElement("div") //#Chat div
   chat.appendChild(messageDiv)
   
   let pfp = document.createElement("img")
   pfp.src = messages.pfp
+  pfp.className = "chatProfilePic"
   messageDiv.appendChild(pfp) //#Chat div img
   
   let messageContent = document.createElement("div") //Chat div div
   messageDiv.appendChild(messageContent)
   
   let userNameHeader = document.createElement("p") //Chat div div p
-  userNameHeader.innerHTML = "<b>" +  messages.username + "</b>" + " " +  messages.today
+  userNameHeader.innerHTML = "<b>" +  messages.username + "</b>" + " " + today
   messageContent.appendChild(userNameHeader)
 
  // messageContent.appendChild(document.createElement("br"))
-  
   let message = document.createElement("span") //Chat div div span
+
+
+  if(validateURL(messages.message))
+  {
+    message = document.createElement("a")
+    message.href = messages.message
+    message.className = "chatlink"
+    validateIMG(messages.message,message)
+  }
+  
+  
+  
   message.innerText = messages.message 
   messageContent.appendChild(message)
+
   
   chat.scrollTop = chat.scrollHeight;
 
-  if(!isWebsiteFocus && hasInteractedWithDOM)
+  if(!isWebsiteFocus && hasInteractedWithDOM){
   notifSound.play()
+  console.log(isWebsiteFocus + "webfoc")
+  console.log(hasInteractedWithDOM + "domint")
+  }
+
+  
+  
 });
 
 function focusPrompt(focus)
@@ -252,15 +279,46 @@ function focusPrompt(focus)
   
 }
 
-document.addEventListener( 'visibilitychange' , function() {
-    if (document.hidden) {
-        isWebsiteFocus = false
-      return;
-    } 
-        console.log('well back');
+window.onfocus = function() {
     isWebsiteFocus = true
-}, false );
+};
+
+window.onblur = function() {
+    isWebsiteFocus = false
+};
+
+function validateURL(string) {
+  let url;
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false;
+  } 
+  return url.protocol === "http:" || url.protocol === "https:"
+}
+
+function validateIMG(url,element)
+{
+    let image = new Image();
+  image.src = url;
+  image.className = "chatimg"
+  image.onload = function() {
+    if (this.width > 0) {
+     
+      //element.width = (element.width / 2)
+    //  element.height = (element.height / 2)
+     element.replaceWith(image)
+      
+     
+      
+    }
+  }
+  image.onerror = function() {
+   return
+  }
+}
 
 
+//document.addEventListener('paste', e => e.preventDefault());
 
 

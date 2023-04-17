@@ -166,7 +166,7 @@ felipe是一个臭皮蛋
 {
   transition: all .1s ease;
 }
-#Chat div img
+.chatProfilePic
 {
   width: 40px;
   height: 40px;
@@ -199,11 +199,25 @@ felipe是一个臭皮蛋
   
 }
 
-#Chat div div span
+#Chat div div span,#Chat div div a
 {
  display: block;
 margin-bottom: 0em;
    font-family: 'Nunito Sans', sans-serif;
+}
+
+.chatlink
+{
+  color: gold;
+}
+
+.chatimg
+{
+  display: block;
+  max-width:460px;
+  max-height:190px;
+  width: auto;
+  height: auto;
 }
 
 #sendMessage
