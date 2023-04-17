@@ -309,7 +309,7 @@ function validateIMG(url,element)
     //  element.height = (element.height / 2)
      element.replaceWith(image)
       
-     
+     chat.scrollTop = chat.scrollHeight;
       
     }
   }
@@ -318,7 +318,7 @@ function validateIMG(url,element)
   }
 }
 
-
+//bro what
 //document.addEventListener('paste', e => e.preventDefault());
 
 
