@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Open+Sans:wght@300;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
 
 html,body {
   height: 100%;
@@ -203,7 +204,7 @@ felipe是一个臭皮蛋
 {
  display: block;
 margin-bottom: 0em;
-   font-family: 'Nunito Sans', sans-serif;
+font-family: 'Kanit', sans-serif;
 }
 
 .chatlink
