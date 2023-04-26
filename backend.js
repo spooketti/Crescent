@@ -63,6 +63,9 @@ const user = firebase.auth().currentUser;
 function updateUser()
 {
   let newname = document.getElementById("editName").value
+  if (!/\S/.test(newname)) { //why would you do it like this
+    return
+  }
   let newpfp = document.getElementById("editPFP").value
   console.log(newname)
   console.log(newpfp)
