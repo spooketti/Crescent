@@ -232,13 +232,13 @@ const yyyy = today.getFullYear();
   messageDiv.appendChild(messageContent)
   
   let userNameHeader = document.createElement("p") //Chat div div p
+  //userNameHeader.innerText = messages.username.toString() + " " + today
+  messageContent.appendChild(userNameHeader)
   let usernameSpan = document.createElement("span")
-  usernameSpan.style.fontWeight = "bold"
+  //usernameSpan.style.fontWeight = "bold"
   usernameSpan.innerText = messages.username
   userNameHeader.appendChild(usernameSpan)
   userNameHeader.innerHTML +=  " " + today
-  //userNameHeader.innerText = messages.username.toString() + " " + today
-  messageContent.appendChild(userNameHeader)
 
  // messageContent.appendChild(document.createElement("br"))
   let message = document.createElement("span") //Chat div div span
