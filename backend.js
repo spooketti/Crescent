@@ -234,8 +234,8 @@ const yyyy = today.getFullYear();
   let userNameHeader = document.createElement("p") //Chat div div p
   let usernameSpan = document.createElement("span")
   usernameSpan.style.fontWeight = "bold"
-  usernameSpan.innerText = messages.username.toString()
-  userNameHeader.innerHTML += usernameSpan
+  usernameSpan.innerText = messages.username
+  userNameHeader.appendChild(usernameSpan)
   userNameHeader.innerHTML +=  " " + today
   //userNameHeader.innerText = messages.username.toString() + " " + today
   messageContent.appendChild(userNameHeader)
