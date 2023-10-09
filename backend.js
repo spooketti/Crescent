@@ -235,7 +235,7 @@ const yyyy = today.getFullYear();
   let usernameSpan = document.createElement("span")
   usernameSpan.style.fontWeight = "bold"
   usernameSpan.innerText = messages.username.toString()
-  userNameHeader.appendChild(usernameSpan)
+  userNameHeader.innerHTML += usernameSpan
   userNameHeader.innerHTML +=  " " + today
   //userNameHeader.innerText = messages.username.toString() + " " + today
   messageContent.appendChild(userNameHeader)
